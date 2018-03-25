@@ -1,12 +1,12 @@
-# MiniSatUI
+# MinisatUI
 [![Awesome](https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 ![stability-experimental](https://img.shields.io/badge/stability-experimental-orange.svg)
-![travis-ci](https://api.travis-ci.org/miniSat/minisat.svg?branch=master)
+![travis-ci](https://travis-ci.org/miniSat/Minisat.svg?branch=master)
 
-Web interface for MiniSat.
+Web interface for Minisat.
 
-MiniSat is a centralize web interface to provision virtual machine and run docker container on remote hosts.
+Minisat is a centralize web interface to provision virtual machine and run docker container on remote hosts.
 
 ### Dependencies
 ```sh
@@ -39,7 +39,17 @@ python3 manage.py migrate
 ```sh
 python3 manage.py runserver 
 ```
-
+### Containerize Minisat
+- Build Docker image
+```sh
+$ cd Minisat/
+$ docker build -t minisat:latest .
+```
+- Run the image
+```sh
+$ docker container -it -p 8000:8000 minisat:latest 0.0.0.0:8000
+```
+- Head to http://localhost:8000 for Minisat UI
 ### Create test environment
 All minisat pull request are tested in [Travis-ci](https://travis-ci.org/miniSat/minisat). Sometimes tests fail, and when they do you can visit the test job that failed and view its console output. 
 
