@@ -91,7 +91,7 @@ def test_product():
     res = []
     exp_res = ["Pass", "Fail"]
     for each in test_case:
-        driver.get("http://localhostL:8000/product")
+        driver.get("http://localhost:8000/product")
         name = driver.find_element_by_id("id_product_name")
         name.send_keys(each[0])
         url = driver.find_element_by_id("id_product_location")
